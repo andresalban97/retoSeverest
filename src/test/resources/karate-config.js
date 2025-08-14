@@ -10,9 +10,10 @@ function fn() {
   }
   if (env == 'dev') {
     config.isAdministrator = "true";
-    config.existingEmail = "fulanoteste@qa.co"
+    config.existingEmail = "fulano@qa.com"
   } else if (env == 'e2e') {
-    // customize
+    config.isAdministrator = "true";
+    config.existingEmail = "fulano@qa.com"
   }
   return config;
 }

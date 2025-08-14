@@ -1,4 +1,4 @@
-@ignore
+
 Feature: Registrar Usuario
 
     Background: Url Definition and Function
@@ -9,7 +9,7 @@ Feature: Registrar Usuario
         Given url ApiUrl
         Given path 'usuarios'
        
-
+    @smoke @regression
     Scenario: User registration successful 
         Given request 
         """
@@ -23,6 +23,7 @@ Feature: Registrar Usuario
         When method post
         Then status 201
 
+    @regression
     Scenario: User registration with existing email 
         Given request 
         """

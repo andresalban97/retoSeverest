@@ -1,4 +1,4 @@
-@ignore
+
 Feature: Eliminar Usuario
 
     Background: Url Definition and Function
@@ -12,6 +12,8 @@ Feature: Eliminar Usuario
         Given url ApiUrl
         Given path 'usuarios'
 
+
+    @regression
     Scenario: Validate Delete User error message
         * def selectUser = new UserSelector().selectRandomUserWithCart(idUsersWithCart)
         * def idUser             = selectUser.idUsuario
@@ -25,6 +27,8 @@ Feature: Eliminar Usuario
     "idCarrinho": #(selectUser._id)
 } 
 """
+
+    @regression @critical
     Scenario: Delete User 
         * def selectUser = new UserSelector().selectRandomUserWithoutCart(idWithoutCart)
         * def idUser = selectUser ? selectUser._id : null
