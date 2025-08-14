@@ -1,4 +1,4 @@
-@ignore
+
 Feature: Listar Usuarios
     
     Background: Url Definition and Function
@@ -6,6 +6,7 @@ Feature: Listar Usuarios
         Given path 'usuarios'
         Given def schemaUser = read('classpath:schemas/listUserSchema.json')
     
+    @smoke @regression
     Scenario: Get Users 
         Given params { administrador: '#(isAdministrator)' }
         When method get

@@ -1,4 +1,4 @@
-@searUser
+@searhUser
 Feature: Buscar Usuario
 
     Background: Url Definition and Function
@@ -11,14 +11,14 @@ Feature: Buscar Usuario
         Given path 'usuarios'
         Given def schemaUser = read('classpath:schemas/listUserSchema.json')
         
-
+    @smoke @regression
     Scenario: Search User succesfull
         Given path idUser
         When method get
         Then status 200
         And match response == schemaUser
 
-
+    @regression
     Scenario Outline: Validate Search User error message
         Given path <idNotExistUser>
         When method get

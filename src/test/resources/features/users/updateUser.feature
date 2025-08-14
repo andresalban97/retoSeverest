@@ -17,6 +17,7 @@ Feature: Actualizar Usuario
         Given url ApiUrl
         Given path 'usuarios'
     
+    @regression @sanity
     Scenario: Update Existing User successfully
         * def randomIndex = dataGenerator.generateRandomNumberInt(userQuantidade)
         * def selectUser = idUsers[randomIndex]
@@ -35,8 +36,9 @@ Feature: Actualizar Usuario
         When method put
         Then status 200
         And match response == { message: 'Registro alterado com sucesso' }
-
-     Scenario: Create New User if ID not found
+    
+    @regression
+    Scenario: Create New User if ID not found
         * def randomIdUser = dataGenerator.generateRandomId(16)
         * def newUser = 
         """
@@ -58,8 +60,9 @@ Feature: Actualizar Usuario
             "_id": #string
         }
         """
-
-     Scenario: Fail updating user due to duplicate email
+    
+    @regression
+    Scenario: Fail updating user due to duplicate email
         * def randomIndex  = dataGenerator.generateRandomNumberInt(userQuantidade)
         * def randomIdUser  = dataGenerator.generateRandomId(16)
         * def selectUser    = idUsers[randomIndex]
