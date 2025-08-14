@@ -9,8 +9,8 @@ function fn() {
     ApiUrl: 'https://serverest.dev/'
   }
   if (env == 'dev') {
-    // customize
-    // e.g. config.foo = 'bar';
+    config.isAdministrator = "true";
+    config.existingEmail = "fulanoteste@qa.co"
   } else if (env == 'e2e') {
     // customize
   }

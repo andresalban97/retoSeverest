@@ -1,13 +1,16 @@
-
+@ignore
 Feature: Listar Usuarios
     
-    Background: 
+    Background: Url Definition and Function
         Given url ApiUrl
         Given path 'usuarios'
-
-    Scenario: Get Users
-        Given params { _id: '1', nome: '10', email: 'dasd@test.com', password: '10', administrador: 'true' }
+        Given def schemaUser = read('classpath:schemas/listUserSchema.json')
+    
+    Scenario: Get Users 
+        Given params { administrador: '#(isAdministrator)' }
         When method get
         Then status 200
-        And match response.quantidade == '##number'
-        And match response.usuarios == '##[]'
+        And match response.quantidade == '#number'
+        And match response.usuarios == '#[] schemaUser'
+        * def idQuantidade = response.quantidade
+        * def AllUsers = response.usuarios
