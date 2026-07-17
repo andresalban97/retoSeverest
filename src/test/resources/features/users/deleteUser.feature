@@ -13,7 +13,7 @@ Feature: Eliminar Usuario
         Given path 'usuarios'
 
 
-    @regression
+    @regression 
     Scenario: Validate Delete User error message
         * def selectUser = new UserSelector().selectRandomUserWithCart(idUsersWithCart)
         * def idUser             = selectUser.idUsuario
@@ -28,7 +28,7 @@ Feature: Eliminar Usuario
 } 
 """
 
-    @regression @critical
+    @regression @critical @deleteUser
     Scenario: Delete User 
         * def selectUser = new UserSelector().selectRandomUserWithoutCart(idWithoutCart)
         * def idUser = selectUser ? selectUser._id : null

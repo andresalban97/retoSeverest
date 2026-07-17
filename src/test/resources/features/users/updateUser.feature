@@ -3,7 +3,7 @@ Feature: Actualizar Usuario
 
     Background: Url Definition and Function
         * def dataGenerator = Java.type('com.severestApp.utils.DataGenerate')
-        * def idUserResponse = call read('classpath:features/users/listUser.feature')
+        * def idUserResponse = call read('classpath:features/users/listUser.feature@listarUsers')
         * def UserSelector = Java.type('com.severestApp.utils.UserSelector')
         * def idUsers = idUserResponse.AllUsers
         * def userQuantidade = idUserResponse.idQuantidade

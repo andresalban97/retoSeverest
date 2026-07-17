@@ -11,7 +11,7 @@ function fn() {
   if (env == 'dev') {
     config.isAdministrator = "true";
     config.existingEmail = "fulano@qa.com"
-  } else if (env == 'e2e') {
+  } else if (env == 'cert') {
     config.isAdministrator = "true";
     config.existingEmail = "fulano@qa.com"
   }

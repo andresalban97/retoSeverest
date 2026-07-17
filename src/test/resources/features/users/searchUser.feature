@@ -11,7 +11,7 @@ Feature: Buscar Usuario
         Given path 'usuarios'
         Given def schemaUser = read('classpath:schemas/listUserSchema.json')
         
-    @smoke @regression
+    @smoke @regression @searchUser
     Scenario: Search User succesfull
         Given path idUser
         When method get

@@ -9,7 +9,7 @@ Feature: Registrar Usuario
         Given url ApiUrl
         Given path 'usuarios'
        
-    @smoke @regression
+    @smoke @regression @registrarUser
     Scenario: User registration successful 
         Given request 
         """

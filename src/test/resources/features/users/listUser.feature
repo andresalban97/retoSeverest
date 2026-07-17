@@ -6,11 +6,12 @@ Feature: Listar Usuarios
         Given path 'usuarios'
         Given def schemaUser = read('classpath:schemas/listUserSchema.json')
     
-    @smoke @regression
+    @smoke @regression @listarUsers
     Scenario: Get Users 
         Given params { administrador: '#(isAdministrator)' }
         When method get
         Then status 200
+        And print response
         And match response.quantidade == '#number'
         And match response.usuarios == '#[] schemaUser'
         * def idQuantidade = response.quantidade
